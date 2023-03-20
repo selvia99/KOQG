@@ -1,0 +1,3 @@
+suku_amuge 6 Ras_melanesoid
+suku_asmat 6 Ras_melanesoid
+suku_huli 6 Ras_melanesoid

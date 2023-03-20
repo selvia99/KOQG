@@ -1,0 +1,70 @@
+(S
+  (SUB (NNP mollusca))
+  (PRE (VB adalah))
+  (OBJ
+    (NN hewan)
+    (PEWATAS
+      (DT yang)
+      (VB bersifat)
+      (FNOM (NNP tripoblastik) (NNP slomata)))))
+(S
+  (SUB (NN ulat))
+  (PRE (VB mengalami))
+  (OBJ (FNOM (NNP perubahan) (NN bentuk))))
+(S
+  (SUB (NN ulat))
+  (PRE (FVERB (VB berubah) (VB menjadi)))
+  (OBJ (NN kepompong)))
+(S
+  (SUB (NN kepompong))
+  (PRE (FVERB (VB berubah) (VB menjadi)))
+  (OBJ (NN kupu-kupu)))
+(S
+  (SUB (FNOM (NNP kelenjar) (NN sutra)))
+  (PRE (FVERB (VB digunakan) (VB membuat)))
+  (OBJ (NN kepompong)))
+(S
+  (SUB (NN kupu-kupu))
+  (PRE (VB mengalami))
+  (OBJ (FADJE (NNP metamorfosis) (JJ sempurna)))
+  (KET
+    (FPREP
+      (FPREP (IN karena) (VB mengalami))
+      (FNOM (NNP perubahan) (NN bentuk)))))
+(S
+  (SUB (FNOM (NNP organisasi) (NN pergerakan)))
+  (PRE (VB mendorong))
+  (OBJ (NN keinginan))
+  (KET (SC untuk) (KLAUSA (PRE (FVERB (VB bekerja) (JJ sama))))))
+(S
+  (SUB (FNOM (NN masa) (NN praaksara)))
+  (PRE (VB adalah))
+  (OBJ (NN masa))
+  (KET
+    (SC ketika)
+    (KLAUSA
+      (SUB (NN manusia))
+      (PRE (FVERB (NEG belum) (VB mengenal)))
+      (OBJ (NN tulisan)))))
+(S
+  (SUB (FNOM (NN tokoh) (NNP organisasi)))
+  (PRE (FVERB (VB berjuang) (JJ bersama)))
+  (KET
+    (SC untuk)
+    (KLAUSA (PRE (VB mencapai)) (OBJ (NN kemerdekaan)))))
+(S
+  (SUB (FNOM (NN ras) (NNP melanesoid)))
+  (PRE (VB merupakan))
+  (OBJ
+    (NN ras)
+    (PEWATAS
+      (DT yang)
+      (VB datang)
+      (FPREP (IN ke) (FNOM (NN kepulauan) (NNP indonesia)))))
+  (KET
+    (SC setelah)
+    (KLAUSA (SUB (FNOM (NNP proto) (NNP melayu))) (PRE (VB datang)))))
+(S
+  (SUB (NNP Indonesia))
+  (PRE (VB dijajah))
+  (KET (FPREP (IN oleh) (NNP Belanda))))

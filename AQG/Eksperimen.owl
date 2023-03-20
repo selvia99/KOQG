@@ -1,0 +1,904 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/net/Eksperimen#"
+     xml:base="http://purl.org/net/Eksperimen"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:term="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://purl.org/net/Eksperimen">
+        <term:created>17-03-2022</term:created>
+        <term:title>Core Sentence Ontology</term:title>
+        <preferredNamespaceUri>okbi</preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">Core Sentence Ontology, created by Selvia Ferdiana Kusuma, Daniel O. Siahaan and Chastine Fatichah</rdfs:comment>
+        <rdfs:comment xml:lang="en">This Core Ontology is built based on the parse tree model in Indonesian sentences.</rdfs:comment>
+        <rdfs:label xml:lang="en">Core Sentence Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/net/Eksperimen#preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/net/Eksperimen#preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasCC -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasCC">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#CC"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara sebuah class konjungsi dengan class CD</rdfs:comment>
+        <rdfs:label>hasCC</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasCD -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasCD">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FNom"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#CD"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara sebuah class FN dengan class CD</rdfs:comment>
+        <rdfs:label>hasCD</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasDT -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasDT">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FNom"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#DT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFW -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFW">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#FW"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFadje -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFadje">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Pelengkap"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#FAdje"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFnom -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFnom">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Objek"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Pelengkap"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Subjek"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#FNom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFnum -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFnum">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Objek properti yang digunakan untuk merelasikan antara instance dengan frase numerical (FNum)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">hasFnum</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFprep -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFprep">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Keterangan"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#FPrep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasFverb -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasFverb">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Predikat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#FVerb"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasIN -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasIN">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FPrep"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#IN"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara sebuah class FPrep dengan class IN</rdfs:comment>
+        <rdfs:label>hasIN</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasJJ -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasJJ">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FAdje"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Pelengkap"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#JJ"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasKlausa -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasKlausa">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Objek properti yang digunakan untuk merelasikan suatu instance dengan klausa</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">hasKlausa</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasMD -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasMD">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FVerb"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#MD"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara sebuah class FV dengan class MD</rdfs:comment>
+        <rdfs:label>hasMD</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasNEG -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasNEG">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FVerb"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#NEG"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FV dengan class NEG</rdfs:comment>
+        <rdfs:label>hasNEG</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasNN -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasNN">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FNom"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Objek"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Subjek"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#NN"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FN, Objek atau Subjek dengan class NN</rdfs:comment>
+        <rdfs:label>hasNN</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasNND -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasNND">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FNom"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#NND"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FN dengan class NND</rdfs:comment>
+        <rdfs:label>hasNND</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasNNP -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasNNP">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FNom"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Objek"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Subjek"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#NNP"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FN, Objek atau Subjek dengan class NNP</rdfs:comment>
+        <rdfs:label>hasNNP</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasNext -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasNext">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasOD -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasOD">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#OD"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara sebuah class dengan class OD</rdfs:comment>
+        <rdfs:label>hasOD</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasPR -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasPR">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FNom"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FVerb"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#PR"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FN, FV dengan class PR</rdfs:comment>
+        <rdfs:label>hasPR</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasPRP -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasPRP">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FNom"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Objek"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Subjek"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#PRP"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FN, Objek atau Subjek dengan class PRP</rdfs:comment>
+        <rdfs:label>hasPRP</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasPart">
+        <owl:inverseOf rdf:resource="http://purl.org/net/Eksperimen#partOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasPewatas -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasPewatas">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Objek properti yang digunakan untuk merelasikan antara suatu objek pewatas dengan objek pewatas yang lainnya</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">hasPewatas</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasPrev -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasPrev">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasRB -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasRB">
+        <rdfs:comment>Objek properti yang menghubungkan antara class FAdj dengan class RB</rdfs:comment>
+        <rdfs:label>hasRB</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasRP -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasRP">
+        <rdfs:comment>Objek properti yang menghubungkan antara class VB dengan class RP</rdfs:comment>
+        <rdfs:label>hasRP</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasSYM -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasSYM">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FPrep"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#SYM"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FPrep dengan class SYM</rdfs:comment>
+        <rdfs:label>hasSYM</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasUH -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasUH">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#FPrep"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#UH"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FPrep dengan class UH</rdfs:comment>
+        <rdfs:label>hasUH</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasVB -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasVB">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#FVerb"/>
+                    <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Predikat"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#VB"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class FV atau Predikat dengan class VB</rdfs:comment>
+        <rdfs:label>hasVB</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasWH -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasWH">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Subjek"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#WH"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class Subjek dengan class WH</rdfs:comment>
+        <rdfs:label>hasWH</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasZnext -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasZnext">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Objek properti yang digunakan untuk merelasikan antara SPOK dan Frasa di dalamnya</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">hasZnext</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasaSC -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasaSC">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#SC"/>
+        <rdfs:comment>Objek properti yang menghubungkan antara class Konjungsi dengan class SC</rdfs:comment>
+        <rdfs:label>hasaSC</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasaSub -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasaSub">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Subjek"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasbPre -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasbPre">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Predikat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hascObj -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hascObj">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Objek"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#hasdPel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#hasdPel">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Pelengkap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#haseKet -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#haseKet">
+        <rdfs:domain rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Keterangan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/Eksperimen#partOf">
+        <rdfs:range rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#CC -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#CC">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Coordinating conjunction (CC) menghubungkan dua atau lebih kata yang sejajar. Coordinating conjunction dapat menghubungkan  klausa, frasa, atau kata independen. Contohnya dan, tetapi, atau.</rdfs:comment>
+        <rdfs:label>CC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#CD -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#CD">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Cardinal numbers (CD) merupakan jawaban dari soal “Berapa?” sehingga CD merepresentasikan angka. COntohnya dua, enam, 445.</rdfs:comment>
+        <rdfs:label>CD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#DT -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#DT">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Article / Determiner (DT) adalah unit tata bahasa yang membatasi referensi potensial dari frasa kata benda, yang peran dasarnya adalah menandai frasa kata benda tersebut. Contohnya para, sang, si</rdfs:comment>
+        <rdfs:label>DT</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FAdje -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FAdje">
+        <rdfs:comment>Frasa Adjectival (FAdj) adalaha frasa berupa adjective. Contohnya amat senang, mahal betul, agak besar</rdfs:comment>
+        <rdfs:label>FAdje</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FNom -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FNom">
+        <rdfs:comment>Frasa Nominal (FN) adalah frasa yang terdiri dari 2 atau lebih kata nomina. COntohnya anak kecil, mobil merah, dua ekor sapi</rdfs:comment>
+        <rdfs:label>FNom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FNum -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FNum">
+        <rdfs:comment>Frasa Numeralia (FNum) adalah gabungan dua atau lebih kata yang mengandung kata numerik. Contohnya lima puluhan , kedua puluh.</rdfs:comment>
+        <rdfs:label>FNum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FPrep -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FPrep">
+        <rdfs:comment>Frasa Preposisional (FPrep) adalah frasa yang mengandung preposisi di dalamnya. Contohnya dengan mudah, di atas meja makan.</rdfs:comment>
+        <rdfs:label>FPrep</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FVerb -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FVerb">
+        <rdfs:comment>Frasa Verbal (VB) adalah frasa yang mengandung penggunaan kata kerja. Contohnya mengirim surat, tidur dengan nyenyak</rdfs:comment>
+        <rdfs:label>FVerb</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#FW -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#FW">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Foreign word (FW) / kata asing adalah kata yang berasal dari bahasa asing dan pada dasarnya belum termasuk dalam kamus bahasa Indonesia. Jika kata asing adalah bagian dari kata benda atau nama, kata tersebut akan diberi label NNP. Contohnya climate change, terms and conditions</rdfs:comment>
+        <rdfs:label>FW</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Hewan -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Hewan">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#IN -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#IN">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>IN</rdfs:comment>
+        <rdfs:comment>Sebuah preposisi menghubungkan kata atau frasa dan konstituen di depan preposisi tersebut dan menghasilkan frasa preposisional. Contohnya dalam, dengan, di, ke, oleh, pada, untuk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#JJ -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#JJ">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Adjectives (JJ) adalah kata-kata yang mendeskripsikan, memodifikasi, atau menentukan beberapa properti dari kata benda dari frasa tersebut. Contohnya bersih, panjang, hitam, lama, jauh, marah, suram, nasional, bulat</rdfs:comment>
+        <rdfs:label>JJ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Kalimat -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Kalimat">
+        <rdfs:comment>satatuan gramatikal terbesar yang mengandung predikat dan mengungkapkan sebuah pikiran</rdfs:comment>
+        <rdfs:label>Kalimat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Keterangan -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Keterangan">
+        <rdfs:comment>Keterangan merupakan fungsi sintaktis yang paling beragam dan paling mudah berpindah letaknya. Konstituen keterangan biasanya berupa frasa preposisional, nomina atau frasa nominal, numeralia atau frasa numeral, atau frasa adverbial</rdfs:comment>
+        <rdfs:label>Keterangan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Klausa -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Klausa">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Kalimat"/>
+        <rdfs:comment>konstruksi sisintaktis yang terdiri atas subjek dan predikat dengan atau tanpa objek, pelengkap, atau keterangan.</rdfs:comment>
+        <rdfs:label>Klausa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#MD -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#MD">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Modal (MD) adalah sekelompok kata bantu yang memberikan tambahan arti pada sebuah kaliamat. Contohnya boleh, harus, sudah, mesti, perlu</rdfs:comment>
+        <rdfs:label>MD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Mollusca -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Mollusca">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Hewan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#NEG -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#NEG">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>NEGATION (NEG) adalah bentuk pernyataan negatif. Contohnya tidak, belum, jangan</rdfs:comment>
+        <rdfs:label>NEG</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#NN -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#NN">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Noun (NN) adalah  kata yang merujuk pada manusia, hewan, benda, konsep, atau pemahaman. Contohnya monyet, bawah, sekarang, rupiah</rdfs:comment>
+        <rdfs:label>NN</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#NND -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#NND">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Measurement noun (NND) terdiri dari Classifier, partitive, and measurement noun.  Classifiers mengklasifikasikan kata benda menjadi kata benda tertentu misalkan: orang.  Partitives menunjukkan jumlah tertentu dari sesuatu berdasarkan cara diukur, dirakit, atau diproses: tetes  . Measurement kata benda mengacu pada ukuran, jarak, volume, kecepatan, berat, atau suhu: ton</rdfs:comment>
+        <rdfs:label>NND</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#NNP -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#NNP">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Proper noun (NN)P) adalah nama spesifik dari seseorang, benda, atau tempat. Contohnya Boediono, Laut Jawa, Indonesia, India, Malaysia, Bank Mandiri, BBKP, Januari, Senin, Idul Fitri, Piala Dunia, Liga Primer, Lord of the Rings: The Return of the King</rdfs:comment>
+        <rdfs:label>NNP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#OD -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#OD">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Ordinal number menunjukkan posisi yang dipesan dalam satu seri. Contohnya ketiga atau kedua</rdfs:comment>
+        <rdfs:label>OD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Objek -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Objek">
+        <rdfs:comment>Objek adalah fungsi sintaktis yang kehadirannya ditentukan oleh predikat yang berupa verba transitif pada kalimat aktif. Letaknya selalu langsung setelah predikat.</rdfs:comment>
+        <rdfs:label>Objek</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Organisasi_pergerakan -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Organisasi_pergerakan">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#PR -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#PR">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Kata ganti demonstratif menyiratkan “menunjuk ke” atau“ mendemonstrasikan ”objek yang dirujuknya: ini . Contohnya ini, itu, sini, situ</rdfs:comment>
+        <rdfs:label>PR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#PRP -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#PRP">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Personal pronouns (PRP) adalah kata ganti yang merujuk pada orang. Contohnya saya, kami, kita, kamu, kalian, dia, mereka</rdfs:comment>
+        <rdfs:label>PRP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Pelengkap -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Pelengkap">
+        <rdfs:comment>Pelengkap mirip dengan Objek namun tidak dapat menjadi subjek dalam pemasifan kalimat</rdfs:comment>
+        <rdfs:label>Pelengkap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Pewatas -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Pewatas">
+        <rdfs:comment>Gabungan beberapa kata yang berfungsi sebagai penjelas sebuah subjek maupun objek</rdfs:comment>
+        <rdfs:label>Pewatas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Predikat -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Predikat">
+        <rdfs:comment>Predikat merupakan unsur pokok yang disertai subjek di sebelah kiri dan, jika ada, unsur objek, pelengkap, dan/atau keterangan-wajib di sebelah kanan</rdfs:comment>
+        <rdfs:label>Predikat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#RB -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#RB">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Adverb (RB) adalah kata tambahan yang berfungsi memperjelas/penekanan makna. Contohnya sangat, hanya, justru, niscaya, segera</rdfs:comment>
+        <rdfs:label>RB</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#RP -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#RP">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Particle (RP) adalah imbuhan kata pun, -lah, -kah</rdfs:comment>
+        <rdfs:label>RP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Ras_melanesoid -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Ras_melanesoid">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#SC -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#SC">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Subordinator (SC) menghubungkan 2 atau lebih klausa namun terletak di dalam sebuah klausa. Contohnya sejak, jika, seandainya, supaya, meski, seolah- olah, sebab, maka, tanpa, dengan, bahwa, yang, lebih ... 
+daripada ..., semoga</rdfs:comment>
+        <rdfs:label>SC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#SYM -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#SYM">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Symbol meliputi symbol matematika misalkan+, dan symbol mata uang misalkan IDR. Contohnya Rp. IDR, +</rdfs:comment>
+        <rdfs:label>SYM</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Subjek -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Subjek">
+        <rdfs:comment>Subjek merupakan fungsi sintaktis terpenting kedua setelah predikat. Subjek berupa nomina,frasa nominal, atau klausa</rdfs:comment>
+        <rdfs:label>Subjek</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Tagset -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Tagset"/>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Tokoh_organisasi -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Tokoh_organisasi">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#UH -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#UH">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Interjection (UH) Kata seru mengungkapkan perasaan atau keadaan pikiran dan tidak ada hubungannya dengan kata lain secara sintaksis. Contohnya brengsek, oh, ooh, aduh, ayo, mari, hai</rdfs:comment>
+        <rdfs:label>UH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#Ulat -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#Ulat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Hewan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#VB -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#VB">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Verb (VB) adalah bentuk kata kerja. Contohnya merancang, mengatur, pergi, bekerja, tertidur</rdfs:comment>
+        <rdfs:label>VB</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/Eksperimen#WH -->
+
+    <owl:Class rdf:about="http://purl.org/net/Eksperimen#WH">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/Eksperimen#Tagset"/>
+        <rdfs:comment>Question Word (WH) adalah kata yang digunakan untuk menanyakan suatu informasi yang spesifik. Contohnya siapa, apa, mana, kenapa, kapan, di mana, bagaimana, berapa</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Keterangan"/>
+            <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Objek"/>
+            <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Pelengkap"/>
+            <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Predikat"/>
+            <rdf:Description rdf:about="http://purl.org/net/Eksperimen#Subjek"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
